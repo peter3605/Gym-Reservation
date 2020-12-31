@@ -25,7 +25,7 @@ option.add_experimental_option("prefs", {
 })
 
 # driver
-driver = webdriver.Chrome(chrome_options=option, executable_path=r'C:\Users\peter\Desktop\chromedriver.exe')
+driver = webdriver.Chrome(chrome_options=option, executable_path=r'\chromedriver.exe')
 
 def login():
     # go to imleagues login
