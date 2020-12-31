@@ -1,19 +1,18 @@
 import datetime
 import time
+import configparser
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 
-# user info
-directory_id = "pho9537"
-password = "Pasadena9537"
-uid = '116047241'
+# read info from properties file
+config = configparser.ConfigParser()
+config.read("config.ini")
 
-duo_passcode = "699084"
-
-# workout info
-location = 'Individual Workout: Weight Room (ERC)'
-workout_time = '11:30 AM'
+directory_id = config.get("UserInfo", "directory_id")
+password = config.get("UserInfo", "password")
+uid = config.get("UserInfo", "uid")
+duo_passcode = config.get("UserInfo", "duo_passcode")
 
 # initialize chrome options
 option = Options()
